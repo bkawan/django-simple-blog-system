@@ -1,0 +1,23 @@
+<div class="card-block border-0 pb-2 px-3">
+    <div class="card-block p-0 m-0">
+        <h6 class="card-title text-md-left">
+            Recent Posts
+        </h6>
+    </div>
+    <div class="card-block p-0 m-0">
+        <ul class="list-unstyled small border-0 m-0 p-0">
+            {% if not contents %}
+                <li class="">No contents yet.</li>
+            {% else %}
+                {% for content in contents %}
+                    <li>
+                        <a href="{{ content.get_absolute_url }}" class="py-1">
+                            {{ content.title|truncatechars:'100' }}
+                        </a>
+                    </li>
+                {% endfor %}
+            {% endif %}
+
+        </ul>
+    </div>
+</div>

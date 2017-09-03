@@ -1,0 +1,8 @@
+DRAFT, PUBLISHED, TRASHED, HIDDEN, ARCHIVED = "Draft", "Published", "Trashed", "Hidden", "Archived"
+STATUS_CHOICES = (
+    (DRAFT, DRAFT),
+    (PUBLISHED, PUBLISHED),
+    (TRASHED, TRASHED),
+    (HIDDEN, HIDDEN),
+    (ARCHIVED, ARCHIVED),
+)

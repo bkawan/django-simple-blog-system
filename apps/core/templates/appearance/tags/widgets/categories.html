@@ -1,0 +1,21 @@
+<div class="card-block border-0 pb-2 px-3">
+    <div class="card-block p-0 m-0">
+        <a href="{% url 'content:categories' %}">
+            <h6 class="strong card-title text-md-left">
+                Categories
+            </h6>
+        </a>
+    </div>
+    <div class="card-block p-0 m-0">
+        <ul class="list-unstyled small border-0 m-0 p-0">
+            {% for category in categories %}
+                <li><a href="{{ category.get_absolute_url }}">
+                    {{ category.title|title }} <span
+                        class="badge bg-grey-50 green-900 badge-pill">{{ category.count_published_content_entries }}</span></a>
+                </li>
+            {% empty %}
+                <li>No categories yet.</li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>

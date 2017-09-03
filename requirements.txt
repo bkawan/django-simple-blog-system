@@ -1,0 +1,8 @@
+Django
+psycopg2
+django-wysiwyg-redactor
+django-tagging
+django-mptt
+easy_thumbnails
+gunicorn
+whitenoise

@@ -1,0 +1,101 @@
+{% extends '_base.html' %}
+{% load staticfiles thumbnail content static  core %}
+{% load social_share %}
+{% block meta-keywords %}{% if object.tags %}{{ object.tags }}{% else %}{{ block.super }}
+{% endif %}{% endblock meta-keywords %}
+{% block meta-author %}{{ object.authors.all|join:', ' }},{{ block.super }}{% endblock %}
+{% block meta-description %}{% if object.excerpt %}{{ object.excerpt }}{% else %}{{ object.lead }}
+{% endif %}{% endblock meta-description %}
+{% block og-description %}{% if object.short_description %}{{ object.short_description }}{% else %}{{ object.lead }}
+{% endif %}{% endblock og-description %}
+{% block og-title %}{% if object.short_title %}{{ object.short_title }}{% else %}{{ object.title }}
+{% endif %}{% endblock og-title %}
+{% block og-type %}article{% endblock og-type %}
+{% block og-url %}{{ HTTP_HOST_NAME_WITH_PROTOCOL }}{{ object.get_absolute_url }}{% endblock og-url %}
+{% block link-canonical %}{{ HTTP_HOST_NAME_WITH_PROTOCOL }}{{ object.get_absolute_url }}{% endblock link-canonical %}
+{% block og-image %}{% if object.image %}{{ object.image.url }}{% else %}{{ block.super }}
+{% endif %}{% endblock og-image %}
+{% block title %}{{ object.title }}{% endblock %}
+
+{% block content %}
+
+    <div class="card pb-5 m-0 border-0">
+        <div class="card-block p-0 m-0 border-0">
+            <small class="text-muted">
+                {{ object.publication_date|date }}
+            </small>
+        </div>
+        <div class="card-block py-3">
+            <a href="{{ object.get_absolute_url }}">
+                <h2 class="card-title">{{ object.title }}</h2>
+            </a>
+            {% if object.image %}
+                <p>
+                    <img class="figure-img img-fluid w-100 height-400 p-0"
+                         src="{{ object.image|thumbnail_url:'thumb-820-400' }}"
+                         alt="{{ object.image_caption }}">
+
+                    {% if object.image_source %}
+                        <small class="text-muted">Image By: {{ object.image_source }}</small>
+                    {% endif %}
+                </p>
+            {% endif %}
+
+        </div>
+        <div class="card-block pb-0">
+            {{ object.content|safe }}
+        </div>
+        <div class="px-3 m-0">
+            <hr>
+        </div>
+        <div class="card-block py-0">
+            <p class="text-muted small py-0 m-0">
+                <i class="fa fa-user"> </i> Posted By: {{ object.user }}&nbsp;
+                <i class="fa fa-calendar"></i>
+                <time datetime="{{ object.publication_date|date:'Y-m-d H:i:s' }}"
+                      data-toggle="tooltip" data-placement="top"
+                      title="{{ object.publication_date|date:'D d M Y H:i:s' }}">
+                    at {{ object.publication_date|time }}
+                </time>
+                in
+                {% get_categories_badges_display object.all_categories %}
+                <i class="fa fa-eye small"></i> Views: {{ object.visit_count }}&nbsp;
+                <i class="fa fa-book"></i> {{ object.read_time }} min read
+
+            </p>
+            {% if object.tags_list %}
+                <p class="text-muted small py-0 m-0">
+                    <i class="fa fa-tags"></i> Tags: {% get_tags_badges_display object.tags_list %}
+                </p>
+            {% endif %}
+
+        </div>
+        <div class="card-block">
+            <div class="row small pl-2">
+                {% tweet_to_twitter content.title content.short_url %} &nbsp;
+                {% share_to_facebook content.title content.short_url %} &nbsp;
+                {% share_to_google_plus content.short_url %}
+            </div>
+        </div>
+    </div>
+    <script>
+        /**
+         *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+         *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+
+        /*
+         var disqus_config = function () {
+         this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+         this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+         };
+         */
+        (function () { // DON'T EDIT BELOW THIS LINE
+            var d = document, s = d.createElement('script');
+            s.src = 'https://healthmandu.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by
+        Disqus.</a></noscript>
+{% endblock %}

@@ -1,0 +1,67 @@
+{% if pages > 1 %}
+    {% with path=request.path %}
+        <nav aria-label="Page navigation" class="">
+            <ul class="pagination pagination-sm">
+                {% if has_previous %}
+                    <li class="page-item">
+                        <a class="page-link" href="
+
+
+                                {{ path }}{% if get_params %}?{{ get_params }}&{% else %}?{% endif %}page={{ page_obj.previous_page_number }}">&laquo;
+                            Previous
+                        </a>
+                    </li>
+                {% else %}
+                    <li class="page-item disabled">
+                        <a class="page-link" href="#" tabindex="-1">Previous</a>
+                    </li>
+                {% endif %}
+                {% if not in_leading_range %}
+                    {% for p in pages_outside_trailing_range %}
+                        <li class="page-item">
+                            <a class="page-link"
+                               href="{{ path }}{% if get_params %}?{{ get_params }}&{% else %}?{% endif %}page={{ p }}">
+                                {{ p }}
+                            </a>
+                        </li>
+                    {% endfor %}
+                    <li class="page-item disabled">
+                        <a class="page-link">&laquo;&laquo; &raquo;&raquo;</a>
+                    </li>
+                {% endif %}
+                {% for p in page_range %}
+                    <li class="page-item">
+                        <a class="page-link {% if p == page %}bg-primary text-white{% endif %}"
+                           href="{{ path }}{% if get_params %}?{{ get_params }}&{% else %}?{% endif %}page={{ p }}">
+                            {{ p }}
+                        </a>
+                    </li>
+                {% endfor %}
+                {% if not in_trailing_range %}
+                    <li class="page-item disabled">
+                        <a class="page-link">&laquo;&laquo; &raquo;&raquo;</a>
+                    </li>
+                    {% for p in pages_outside_leading_range reversed %}
+                        <li class="page-item"><a class="page-link" href="
+
+                                {{ path }}{% if get_params %}?{{ get_params }}&{% else %}?{% endif %}page={{ p }}">{{ p }}</a>
+                        </li>
+                    {% endfor %}
+                {% endif %}
+                {% if has_next %}
+                    <li class="page-item"><a class="page-link" href="
+
+                            {{ path }}{% if get_params %}?{{ get_params }}&{% else %}?{% endif %}page={{ page_obj.next_page_number }}">Next
+                        &raquo;</a>
+                    </li>
+                {% else %}
+                    <li {% if not page_obj.has_next %}class="page-item disabled"{% endif %}>
+                        <a class="page-link" href="#" tabindex="-1">Next</a>
+                    </li>
+                {% endif %}
+            </ul>
+        </nav>
+    {% endwith %}
+{% endif %}
+
+

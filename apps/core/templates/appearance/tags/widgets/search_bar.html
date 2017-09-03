@@ -1,0 +1,16 @@
+<div class="border-0 pb-2 px-3">
+    <div class="text-md-left pb-2">
+        <strong>Search {{ company_name }} blog </strong>
+    </div>
+    <form class="form-inline small" action="{% url 'content:content_entry_search' %}"
+          method="get">
+        <div class="input-group">{{ request.GET.q }}
+            <input type="text" class="form-control" height="2" name='q' value="{{ q }}" placeholder="Search blog...">
+            <span class="input-group-btn">
+                      <button class="btn btn-outline-info my-2 my-sm-0" type="submit"><i
+                              class="fa fa-search"></i></button>
+
+            </span>
+        </div>
+    </form>
+</div>

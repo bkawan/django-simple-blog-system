@@ -1,0 +1,7 @@
+<nav class="breadcrumb small my-1 mx-1 p-1 green-50">
+    <a class="breadcrumb-item text-success" href="/"> <i class="fa fa-home"></i>Home</a>
+    {% for path in paths|slice:"0:-1" %}
+        <a class="breadcrumb-item text-success" href="">{{ path }}</a>
+    {% endfor %}
+    <span class="breadcrumb-item active">{{ paths|last }}</span>
+</nav>

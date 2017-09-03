@@ -1,0 +1,12 @@
+{% extends '_base.html' %}
+
+{% block content %}
+    {% load i18n %}
+    <div class="card">
+        <div class="card-block p-1">
+            {% for tag in object_list|dictsortreversed:"count" %}
+                <span><a href="{% url 'content:tag_detail' tag.name %}" class="tag-cloud-font-{{ tag.font_size }}">{{ tag }}</a></span>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

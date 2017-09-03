@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+{% load i18n %}
+{% load staticfiles thumbnail static content widgets paginator core %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% block meta %}
+        <meta name="description" content="
+
+
+
+
+
+
+
+                {% block meta-description %}{% trans " " %}{% endblock meta-description %}{% block meta-description-page %}{% endblock meta-description-page %}"/>
+        <meta name="keywords"
+              content="{% block meta-keywords %} {% endblock meta-keywords %} "/>
+        <meta name="author" content=""/>
+        <meta property="og:url" content="{% block og-url %}http://jsfigures.com/{% endblock %}"/>
+        <meta property="og:type" content="{% block og-type %}Website{% endblock %} "/>
+        <meta property="og:title" content="{% block og-title %}{% endblock %} "/>
+        <meta property="og:description" content="{% block og-description %}http://jsfigures.com/{% endblock %} "/>
+        <meta property="og:image" content="{% block og-image %}http://jsfigures.com/{% endblock %} "/>
+        <meta name="google-site-verification" content="{{ google_site_verification }}"/>
+
+    {% endblock meta %}
+    <title>{{ COMPANY_NAME }}</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'bootstrap/css/bootstrap.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static "fa/css/font-awesome.min.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static "material/css/color-palette.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static "material/css/bg-color-palette.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static "css/style.css" %}">
+    <link rel="shortcut icon" type="image/logo.png" href=""/>
+    <link href='https://fonts.googleapis.com/css?family=Baloo' rel='stylesheet'>
+    <style>
+
+    </style>
+</head>
+<body class="bg-color">
+<div class="container bg-white full-height">
+    <div class="row">
+        <div class="col-md-12 p-0 m-0">
+            <div class="header bg-white">
+                <div class="blue-100">
+                    <div class="card card-inverse p-0 m-0">
+                        <img class="card-img" src="{% static 'images/banner.jpg' %}" alt="Card image" height="200">
+                        <div class="card-img-overlay">
+                            <a class="text-white font-2rem" href="/">
+                                <h1 class="main-header text-white">{{ COMPANY_NAME }}</h1>
+                            </a>
+                            <div class="col-md-8">
+                                <p class="pt-2 mb-0 description">
+                                    {{ COMPANY_DESCRIPTION }}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12 pt-3 bg-white">
+            <div class="row p-0 m-0">
+                <div class="col-md-8 border-right">
+                    <div class="content-list border-0">
+                        {% include 'content/partials/_content_list.html' %}
+                    </div>
+                    <div class="row pb-5">
+                        <div class="col-md-3">
+                        </div>
+                        <div class="col-md-6">
+
+                            {% ajax_paginator %}
+                        </div>
+                        <div class="col-md-3">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 widget" id="sidebar">
+                    <aside id="widget-recent" class="aside-widget pb-3">
+                        {% get_search_bar %}
+                    </aside>
+                    <aside id="widget-recent" class="aside-widget pb-3">
+                        {% connect_to_social_page %}
+                    </aside>
+                    <aside id="widget-recent" class="aside-widget pb-3">
+                        {% get_recent_contents %}
+                    </aside>
+                    <aside id="widget-recent" class="aside-widget pb-3">
+                        {% get_categories %}
+                    </aside>
+                    <aside id="widget-recent" class="aside-widget">
+                        {% archive_posts %}
+                    </aside>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script type="text/javascript" src="{% static "js/libs/jquery-3.2.1.min.js" %}"></script>
+<script type="text/javascript" src="{% static "tether/dist/js/tether.js" %}">
+</script>
+<script type="text/javascript" src="{% static "bootstrap/js/bootstrap.js" %}"></script>
+
+</body>
+</html>

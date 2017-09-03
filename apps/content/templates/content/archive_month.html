@@ -1,0 +1,25 @@
+{% extends "_base.html" %}
+
+{% load staticfiles thumbnail content static paginator core %}
+{% load social_share %}
+{% block meta-keywords %}{% if object.tags %}{{ object.tags }}{% else %}{{ block.super }}
+{% endif %}{% endblock meta-keywords %}
+{% block meta-author %}{{ object.authors.all|join:', ' }},{{ block.super }}{% endblock %}
+{% block meta-description %}{% if object.excerpt %}{{ object.excerpt }}{% else %}{{ object.lead }}
+{% endif %}{% endblock meta-description %}
+{% block og-description %}{% if object.short_description %}{{ object.short_description }}{% else %}{{ object.lead }}
+{% endif %}{% endblock og-description %}
+{% block og-title %}{% if object.short_title %}{{ object.short_title }}{% else %}{{ object.title }}
+{% endif %}{% endblock og-title %}
+{% block og-type %}article{% endblock og-type %}
+{% block og-url %}{{ HTTP_HOST_NAME_WITH_PROTOCOL }}{{ object.get_absolute_url }}{% endblock og-url %}
+{% block link-canonical %}{{ HTTP_HOST_NAME_WITH_PROTOCOL }}{{ object.get_absolute_url }}{% endblock link-canonical %}
+{% block og-image %}{% if object.image %}{{ object.image.url }}{% else %}{{ block.super }}
+{% endif %}{% endblock og-image %}
+{% block title %}Archives - {{ month|date:"F" }}{% endblock %}
+
+{% block content %}
+    <h3 class="my-2 pb-2 text-left font-weight-bold">{{ month|date:"F Y" }}</h3>
+    {% include 'content/partials/_content_list.html' %}
+    {% ajax_paginator %}
+{% endblock content %}

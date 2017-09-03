@@ -1,0 +1,59 @@
+{% extends '_base.html' %}
+{% load staticfiles thumbnail content static %}
+{% load core %}
+{% load paginator %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-md-12 pt-4">
+            {% if not contents %}
+                {% if error %}
+                    <h6 class="alert alert-danger">
+                        {{ error }}
+                    </h6>
+                {% endif %}
+                <p class="alert alert-warning">Results not found!! Your search <strong>{{ q }} </strong>did not match
+                    any documents</p>
+                <h6>Suggestions:</h6>
+
+                <ul>
+                    <li>Simplify your search: try fewer or more general keywords</li>
+                    <li> Make sure all words are spelled correctly</li>
+
+                    <li>
+                        Use keywords that reflect words or phrases likely to be in the text of the item you are
+                        seeking
+                    </li>
+                </ul>
+
+            {% else %}
+                {% if page_obj.paginator.count >= 1 %}
+                    <h6 class="alert bg-blue-50">
+                        Showing {{ page_obj.start_index }} - {{ page_obj.end_index }}
+                        of {{ page_obj.paginator.count }}
+                        for <strong>{{ q }}</strong>
+                    </h6>
+                {% else %}
+                    No results.
+                    <span id="job-count">
+
+                {% endif %}
+            </span>
+            {% endif %}
+            <div class="content-list">
+                {% include 'content/partials/_content_list.html' %}
+            </div>
+            {#            {% pagination is_paginated page_obj paginator %}#}
+            <div class="row pb-5">
+                <div class="col-md-3">
+                </div>
+                <div class="col-md-6">
+
+                    {% ajax_paginator %}
+                </div>
+                <div class="col-md-3">
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

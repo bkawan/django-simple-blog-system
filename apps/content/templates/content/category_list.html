@@ -1,0 +1,23 @@
+{% extends '_base.html' %}
+{% load staticfiles %}
+{% load mptt_tags %}
+{% load core %}
+
+{% block content %}
+    <h3 class="my-2 pb-2 text-left font-weight-bold">Categories</h3>
+    <section id="child-category">
+        <ul class="root">
+            {% recursetree object_list %}
+                <li class="parent">
+                    <a href="{{ node.get_absolute_url }}"> {{ node.title }} <span
+                            class="badge bg-grey-50 text-gray-dark">{{ node.count_contents_published }}</span> </a>
+                    {% if not node.is_leaf_node %}
+                        <ul class="children">
+                            {{ children }}
+                        </ul>
+                    {% endif %}
+                </li>
+            {% endrecursetree %}
+        </ul>
+    </section>
+{% endblock %}

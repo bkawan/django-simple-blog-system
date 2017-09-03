@@ -1,0 +1,236 @@
+/*.active {*/
+/*border: solid 1px #1B5E20;*/
+/*!*!*background: #1B5E20 !important;*!*!*/
+/*!*color: whitesmoke!important;*!*/
+/*}*/
+
+body, h1, h2, h3, h4, h5, h6, p, ul, li, .main-header, p.description {
+    font-family: Segoe, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+    color: #333;
+    /*font-size: 12px;*/
+
+    /*background-color: #fff;*/
+}
+
+.full-height {
+    height: 100vh;
+
+}
+
+.content_detail img {
+    width: 100%;
+}
+
+.main-header {
+    font-size: 65px;
+}
+
+.module-header {
+    font-size: 14 pz;
+    font-weight: bold;
+}
+
+.container {
+    width: 940px !important;
+}
+
+.date-header {
+    margin: 5px 0;
+    font-size: 10px;
+}
+
+.entry-header {
+    font-family: georgia, 'times new roman', serif;
+    font-size: 22px;
+}
+
+p.discription {
+    font-size: 15px;
+}
+
+.widget a {
+    color: #263F59 !important;
+    text-decoration: underline !important;
+}
+
+.author-image-small {
+    height: 120px;
+!important;
+    width: 120px;
+!important;
+}
+
+.thumb-64-64 {
+    height: 64px;
+!important;
+    width: 64px;
+!important;
+}
+
+/*.img-*/
+.height-400 {
+    height: 400px !important;
+}
+
+.w-250 {
+    width: 250px !important;
+}
+
+.h-160 {
+    height: 160px !important;
+}
+
+/** {*/
+/*border: 1px solid #f00;*/
+/*}*/
+
+.text-wheat {
+    color: floralwhite;
+}
+
+.text-twitter {
+    color: #00aced;
+}
+
+.bg-twitter {
+    background-color: #00aced;
+}
+
+.text-facebook {
+    color: #3b5998;
+}
+
+.bg-facebook {
+    background-color: #3b5998;
+
+}
+
+.text-google-plus {
+    color: #dd4b39;
+}
+
+.bg-google-plus {
+    background-color: #dd4b39;
+
+}
+
+.social-share a:hover {
+    background-color: green;
+}
+
+.social-share:hover {
+    background-color: green;
+}
+
+/* Social Media Brand Colors
+
+twitter:     #00aced     rgb(0, 172, 237)
+facebook:    #3b5998     rgb(59, 89, 152)
+googleplus:  #dd4b39     rgb(221, 75, 57)
+pinterest:   #cb2027     rgb(203, 32, 39)
+linkedin:    #007bb6     rgb(0, 123, 182)
+youtube:     #bb0000     rgb(187, 0, 0)
+vimeo:       #1ab7ea     rgb(26, 183, 234)
+tumblr:      #32506d     rgb(50, 80, 109)
+instagram:   #bc2a8d     rgb(188, 42, 141)
+flickr:      #ff0084     rgb(255, 0, 132)
+dribbble:    #ea4c89     rgb(234, 76, 137)
+quora:       #a82400     rgb(168, 36, 0)
+foursquare:  #0072b1     rgb(0, 114, 177)
+forrst:      #5B9A68     rgb(91, 154, 104)
+vk:          #45668e     rgb(69, 102, 142)
+wordpress:   #21759b     rgb(33, 117, 155)
+stumbleupon: #EB4823     rgb(235, 72, 35)
+yahoo:       #7B0099     rgb(123, 0, 153)
+blogger:     #fb8f3d     rgb(251, 143, 61)
+soundcloud:  #ff3a00     rgb(255, 58, 0)
+
+*/
+
+.top-220 {
+    top: 220px;
+}
+
+.top-80 {
+    top: 80px;
+}
+
+.black-opacity-0-3 {
+    background: rgba(0, 0, 0, 0.3);
+
+}
+
+/* for main navigation */
+
+#main-nav-bar ul li a {
+    color: #C5E1A5;
+}
+
+#main-nav-bar ul li a:hover {
+    background-color: cornflowerblue;
+    color: darkblue;
+}
+
+#main-nav-bar ul li a:hover li > a.active {
+    background-color: #2E7D32;
+    color: white;
+}
+
+.tag-cloud-font-6 {
+    font-size: 1.9rem;
+}
+
+.tag-cloud-font-5 {
+    font-size: 1.75rem;
+}
+
+.tag-cloud-font-4 {
+    font-size: 1.50rem;
+}
+
+.tag-cloud-font-3 {
+    font-size: 1.25rem;
+}
+
+.tag-cloud-font-2 {
+    font-size: 1rem;
+}
+
+.tag-cloud-font-1 {
+    font-size: 0.75rem;
+}
+
+.google-slide {
+    overflow: hidden;
+}
+
+.google-slide iframe {
+    width: 100%;
+}
+
+.font-baloo {
+    font-family: 'Baloo';
+
+}
+
+.font-2rem {
+    font-size: 2rem;
+
+}
+
+.reference-link:hover {
+    background-color: #e8f5e9;
+
+}
+
+.border-right {
+    border-right: 1px solid lightgrey;
+}
+
+.bg-color {
+    background-color: #E5E6E9;
+}
+
+.bg-white {
+    background-color: white;
+}

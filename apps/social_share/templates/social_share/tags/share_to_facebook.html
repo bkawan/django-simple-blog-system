@@ -1,0 +1,22 @@
+<div id="facebook-share-button" class="social-share btn btn-sm bg-facebook text-white small"><i
+        class="fa fa-facebook"></i> share
+</div>
+
+<script>
+    document.getElementById('facebook-share-button').onclick = function () {
+        FB.ui({
+            method: 'share',
+            display: 'popup',
+            hashtag: "#".concat('{{ COMPANY_NAME }}'),
+            mobile_iframe: true,
+            quote: '{{ content_title }}',
+            href: '{{ content_url }}'
+        }, function (response) {
+            if (response && !response.error_message) {
+                alert('Posting completed.');
+            } else {
+                alert('Error while posting.');
+            }
+        });
+    }
+</script>

@@ -1,0 +1,21 @@
+
+<div class="card-block border-0 pb-2 px-3">
+    <div class="card-block p-0 m-0">
+        <h6 class="strong card-title text-md-left">
+            Archives
+        </h6>
+    </div>
+    <div class="card-block p-0 m-0">
+        <ul class="list-unstyled small border-0 m-0 p-0">
+            {% for d in dates %}
+                <li>
+                    <a href="{% url 'content:archive_month' d|date:"o" d|date:"b" %}">{{ d|date:"F o" }}</a>
+                </li>
+            {% empty %}
+                <li>No archives yet.</li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+
+
