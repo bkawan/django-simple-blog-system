@@ -4,9 +4,10 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'simpleblog',
-        'USER': '',
-        'PASSWORD': '',
-        'HOST': '5432'
+        'USER': 'password',
+        'PASSWORD': 'password',
+        'HOST': 'localhost',
+        'PORT': '5432',
 
     }
 }
