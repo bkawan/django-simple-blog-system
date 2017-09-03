@@ -6,7 +6,7 @@ DATABASES = {
         'NAME': 'simpleblog',
         'USER': '',
         'PASSWORD': '',
-        'HOST': 'localhost',
+        'HOST': '5432'
 
     }
 }
