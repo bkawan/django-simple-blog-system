@@ -5,25 +5,25 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'simpleblog',
-        'USER': 'password',
-        'PASSWORD': 'password',
+        'USER': '',
+        'PASSWORD': '',
         'HOST': 'localhost',
         'PORT': '5432',
 
     }
 }
+
 DEFAULT_FROM_EMAIL = 'bikeshkawang@gmail.com'
 SERVER_EMAIL = 'bikeshkawang@gmail.com'
 ADMINS = [('bikesh kawan', 'bikeshkawang@gmail.com')]
 MANAGERS = ADMINS
 GOOGLE_SITE_VERIFICATION = 'hV4EwwprownATbXeq6IZCsdfsd3wEn83E4vAjL0owTzkK4l8'
-FACEBOOK = {'page_link': "http://facebook.com/jsfigures"}
-TWITTER = {'page_link': "http://facebook.com/jsfigures"}
-GOOGLE = {'page_link': "http://facebook.com/jsfigures"}
-COMPANY_NAME = 'JS Figures'
-COMPANY_DESCRIPTION = "Daily news about using open source R for big data analysis, predictive modeling, data science, and visualization since 2008"
+FACEBOOK = {'page_link': "http://facebook.com/healthmandu"}
+TWITTER = {'page_link': "http://facebook.com/healthmandu"}
+GOOGLE = {'page_link': "https://plus.google.com/103977365721792469348"}
+COMPANY_NAME = 'Simple Blog System'
+COMPANY_DESCRIPTION = "This is a simple blog system made with Django...If you like it, share and like...."
 
 import dj_database_url
 
-DATABASES = {
-    'default': dj_database_url.config()}
+DATABASES['default'] = dj_database_url.config()

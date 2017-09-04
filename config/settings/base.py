@@ -150,11 +150,11 @@ THUMBNAIL_ALIASES = {
         'thumb-820-400': {'size': (800, 400), 'crop': False},
     },
 }
-COMPANY_NAME = 'JS Figures'
-COMPANY_DESCRIPTION = "Daily news about using open source R for big data analysis, predictive modeling, data science, and visualization since 2008"
+COMPANY_NAME = 'Django Simple Blog'
+COMPANY_DESCRIPTION = "Django Simple blog system "
 
-HTTP_PROTOCOL = 'http'
-HTTP_HOST = 'jsfigures.com/'
+HTTP_PROTOCOL = 'https'
+HTTP_HOST = 'django-simple-blog.herokuapp.com'
 
 LOGGING = {
     'version': 1,
@@ -193,8 +193,8 @@ SERVER_EMAIL = 'bikeshkawang@gmail.com'
 ADMINS = [('bikesh kawan', 'bikeshkawang@gmail.com')]
 MANAGERS = ADMINS
 GOOGLE_SITE_VERIFICATION = 'hV4EwwprownATbXeq6IZCsdfsd3wEn83E4vAjL0owTzkK4l8'
-DISCUSS_URL = 'https://example.disqus.com/'
+DISCUSS_URL = 'https://healthmandu.disqus.com/'
 
-FACEBOOK = {'page_link': "http://facebook.com/jsfigures"}
-TWITTER = {'page_link': "http://facebook.com/jsfigures"}
-GOOGLE = {'page_link': "http://facebook.com/jsfigures"}
+FACEBOOK = {'page_link': "http://facebook.com/healthmandu"}
+TWITTER = {'page_link': "http://facebook.com/healthmandu"}
+GOOGLE = {'page_link': "http://facebook.com/healthmandu"}

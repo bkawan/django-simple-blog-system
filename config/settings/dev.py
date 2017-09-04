@@ -20,6 +20,17 @@ ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '*']
 
 HTTP_HOST_WITH_PROTOCOL = 'http://127.0.0.1:8000'
 # for local host
-FACEBOOK_APP_ID = '109785509656396'
+FACEBOOK_APP_ID = '109212785509656396'
 
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'simpleblog',
+        'USER': '',
+        'PASSWORD': '',
+        'HOST': 'localhost',
+        'PORT': '5432',
+
+    }
+}
 
