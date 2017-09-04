@@ -33,3 +33,6 @@ localhost:8000/admin
 
 provide username and password created earlier
 
+
+Demo URl
+- https://django-simple-blog.herokuapp.com
