@@ -1,6 +1,5 @@
 # Database
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases
-from decouple import config
 
 DATABASES = {
     'default': {
@@ -26,8 +25,4 @@ COMPANY_DESCRIPTION = "Daily news about using open source R for big data analysi
 
 import dj_database_url
 
-DATABASES = {
-    'default': dj_database_url.config(
-        default=config('DATABASE_URL')
-    )
-}
+DATABASES['default'] = dj_database_url.config()
