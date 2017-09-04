@@ -1,5 +1,7 @@
 # Database
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases
+from decouple import config
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
@@ -21,3 +23,13 @@ TWITTER = {'page_link': "http://facebook.com/jsfigures"}
 GOOGLE = {'page_link': "http://facebook.com/jsfigures"}
 COMPANY_NAME = 'JS Figures'
 COMPANY_DESCRIPTION = "Daily news about using open source R for big data analysis, predictive modeling, data science, and visualization since 2008"
+
+import dj_database_url
+
+SECRET_KEY = config('SECRET_KEY')
+DEBUG = config('DEBUG', default=False, cast=bool)
+DATABASES = {
+    'default': dj_database_url.config(
+        default=config('DATABASE_URL')
+    )
+}

@@ -6,3 +6,7 @@ django-mptt
 easy_thumbnails
 gunicorn
 whitenoise
+dj-database-url
+dj-static
+Unipath
+python-decouple
