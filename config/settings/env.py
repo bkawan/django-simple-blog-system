@@ -25,4 +25,5 @@ COMPANY_DESCRIPTION = "Daily news about using open source R for big data analysi
 
 import dj_database_url
 
-DATABASES['default'] = dj_database_url.config()
+DATABASES = {
+    'default': dj_database_url.config()}
