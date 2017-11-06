@@ -5,9 +5,9 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'simpleblog',
-        'USER': '',
-        'PASSWORD': '',
-        'HOST': 'localhost',
+        'USER': 'postgres',
+        'PASSWORD': 'password',
+        'HOST': '127.0.0.1',
         'PORT': '5432',
 
     }
@@ -24,6 +24,7 @@ GOOGLE = {'page_link': "https://plus.google.com/103977365721792469348"}
 COMPANY_NAME = 'Simple Blog System'
 COMPANY_DESCRIPTION = "This is a simple blog system made with Django...If you like it, share and like...."
 
-import dj_database_url
+#import dj_database_url
 
-DATABASES['default'] = dj_database_url.config()
+
+#DATABASES['default'] = dj_database_url.config()

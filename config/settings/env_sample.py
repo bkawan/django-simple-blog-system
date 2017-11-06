@@ -23,3 +23,6 @@ TWITTER = {'page_link': "http://facebook.com/jsfigures"}
 GOOGLE = {'page_link': "http://facebook.com/jsfigures"}
 COMPANY_NAME = 'JS Figures'
 COMPANY_DESCRIPTION = "Daily news about using open source R for big data analysis, predictive modeling, data science, and visualization since 2008"
+# comment two line below if you want to run in local
+import dj_database_url
+DATABASES['default'] = dj_database_url.config()
